@@ -1,0 +1,78 @@
+# Enchanted books. Each category is a button in the Books dialog.
+# Single book:   enchantment + level + price
+# Level group:   enchantment + levels: {1: price, 2: price...}  -> opens a sub-dialog
+# Levels above vanilla max still work (ignore-level-restriction), e.g. Respiration IV.
+# Unknown enchantments (older server versions) are skipped with a console warning.
+categories:
+  armour:
+    name: "<aqua>Armour"
+    entries:
+      protection:       { name: "Protection IV",       enchantment: protection,       level: 4, price: 4500, rarity: RARE }
+      blast_protection: { name: "Blast Protection IV", enchantment: blast_protection, level: 4, price: 4500, rarity: RARE }
+      thorns:           { name: "Thorns III",          enchantment: thorns,           level: 3, price: 2400,  rarity: UNCOMMON }
+      swift_sneak:      { name: "Swift Sneak III",     enchantment: swift_sneak,      level: 3, price: 7500, rarity: EPIC }
+      feather_falling:  { name: "Feather Falling IV",  enchantment: feather_falling,  level: 4, price: 1800,  rarity: UNCOMMON }
+      soul_speed:       { name: "Soul Speed III",      enchantment: soul_speed,       level: 3, price: 3600, rarity: RARE }
+      depth_strider:    { name: "Depth Strider III",   enchantment: depth_strider,    level: 3, price: 2400,  rarity: UNCOMMON }
+      aqua_affinity:    { name: "Aqua Affinity",       enchantment: aqua_affinity,    level: 1, price: 1200,  rarity: UNCOMMON }
+      respiration:      { name: "Respiration IV",      enchantment: respiration,      level: 4, price: 3600, rarity: RARE }
+  tools:
+    name: "<green>Tools"
+    entries:
+      sharpness:        { name: "Sharpness V",         enchantment: sharpness,        level: 5, price: 7500, rarity: EPIC }
+      sweeping_edge:    { name: "Sweeping Edge III",   enchantment: sweeping_edge,    level: 3, price: 3000, rarity: RARE }
+      fire_aspect:      { name: "Fire Aspect II",      enchantment: fire_aspect,      level: 2, price: 2400,  rarity: UNCOMMON }
+      knockback_1:      { name: "Knockback I",         enchantment: knockback,        level: 1, price: 900,  rarity: COMMON }
+      knockback_2:      { name: "Knockback II",        enchantment: knockback,        level: 2, price: 1800,  rarity: UNCOMMON }
+      looting:          { name: "Looting III",         enchantment: looting,          level: 3, price: 4500, rarity: RARE }
+  bow:
+    name: "<gold>Bow"
+    entries:
+      infinity:         { name: "Infinity",            enchantment: infinity,         level: 1, price: 6000, rarity: EPIC }
+      flame:            { name: "Flame",               enchantment: flame,            level: 1, price: 2400,  rarity: UNCOMMON }
+      punch:            { name: "Punch II",            enchantment: punch,            level: 2, price: 1800,  rarity: UNCOMMON }
+      power:            { name: "Power V",             enchantment: power,            level: 5, price: 6000, rarity: EPIC }
+      multishot:        { name: "Multishot",           enchantment: multishot,        level: 1, price: 4500, rarity: RARE }
+      quick_charge:     { name: "Quick Charge III",    enchantment: quick_charge,     level: 3, price: 3000, rarity: RARE }
+      piercing:         { name: "Piercing IV",         enchantment: piercing,         level: 4, price: 2700,  rarity: UNCOMMON }
+  xp:
+    name: "<green>XP"
+    entries:
+      # NOTE: vanilla Minecraft has no enchantment called "Upgrading". It is mapped to Efficiency here.
+      # Change `enchantment:` to whatever you meant (fortune, luck_of_the_sea, ...).
+      upgrading:
+        name: "Upgrading"
+        enchantment: efficiency
+        rarity: RARE
+        levels: { 1: 1500, 2: 3000, 3: 6000 }
+      mending:          { name: "Mending",             enchantment: mending,          level: 1, price: 15000, rarity: LEGENDARY }
+  spear:
+    name: "<yellow>Spear"
+    entries:
+      lunge:                       # needs Minecraft 1.21.11+
+        name: "Lunge"
+        enchantment: lunge
+        rarity: EPIC
+        levels: { 1: 4500, 2: 9000, 3: 18000 }
+  mace:
+    name: "<dark_gray>Mace"
+    entries:
+      density:
+        name: "Density"
+        enchantment: density
+        rarity: RARE
+        levels: { 1: 3000, 2: 6000, 3: 10500, 4: 16500, 5: 24000 }
+      wind_burst:
+        name: "Wind Burst"
+        enchantment: wind_burst
+        rarity: EPIC
+        levels: { 1: 9000, 2: 18000, 3: 30000 }
+  others:
+    name: "<white>Others"
+    entries:
+      unbreaking:
+        name: "Unbreaking"
+        enchantment: unbreaking
+        rarity: UNCOMMON
+        levels: { 1: 900, 2: 2100, 3: 4500 }
+      mending:          { name: "Mending",             enchantment: mending,          level: 1, price: 15000, rarity: LEGENDARY }

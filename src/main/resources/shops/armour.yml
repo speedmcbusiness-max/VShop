@@ -1,0 +1,20 @@
+# Armour shop chest settings. The ITEMS + PRICES are set in-game: /vshop editarmour
+# (or /vshop:editarmour). Stored in plugins/VShop/armour-items.yml
+# 53 item slots (0-52); the last slot (53) is the close button.
+title: "<dark_gray>Armour Shop"
+edit-title: "<dark_red>Armour Shop <gray>(Editing)"
+rarity: RARE                 # colour used in dialogs/Discord for armour items
+default-price: 1000.0        # price given to a newly added item before you edit it
+filler: AIR                  # e.g. GRAY_STAINED_GLASS_PANE to fill empty slots in the shop view
+close-item:
+  material: BARRIER
+  name: "<red>Close"
+price-lore:                  # {price} {name}
+  - ""
+  - "<gray>Price: <green>{price}"
+  - "<yellow>Click to buy"
+edit-lore:
+  - ""
+  - "<gray>Price: <green>{price}"
+  - "<yellow>Left-click: <white>edit price"
+  - "<red>Right-click: <white>remove"

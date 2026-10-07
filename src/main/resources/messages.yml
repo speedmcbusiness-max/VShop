@@ -1,0 +1,24 @@
+# MiniMessage. {placeholders} shown in comments.
+prefix: "<gold>[Shop] <reset>"
+no-permission: "<red>You don't have permission."
+players-only: "<red>Only players can use this."
+reloaded: "<green>VShop reloaded."
+unknown-category: "<red>Unknown shop section: <white>{input}"
+no-economy: "<red>The shop cannot take payment right now (no economy plugin). Tell an admin."
+not-enough-money: "<red>Not enough money! You need <white>{total}</white> but only have <white>{balance}</white> (<white>{missing}</white> short)."  # {name} {amount} {price} {total} {balance} {missing}
+inventory-full: "<red>Your inventory is full."
+purchased: "<green>Bought <white>{amount}x {name}</white> for <yellow>{total}</yellow>."
+purchase-failed: "<red>Transaction failed: {error}"
+search-empty: "<red>Type something in the search bar first."
+armour-edit-help: "<yellow>Edit mode: <white>hold an item + click a slot, or shift-click from your inventory to add. <gray>Left-click = price, right-click = remove."
+armour-price-set: "<green>Price set to <yellow>{price}</yellow>."
+armour-price-invalid: "<red>Invalid price - use a number like 1500 or 99.5"
+
+# ---- Action bar (shown above the hotbar). Placeholders: {name} {amount} {price} {total} {balance} {missing}
+actionbar-purchased: "<green>Purchased <white>{amount}x {name}</white> <gray>| <yellow>-{total} <gray>| Balance: <white>{balance}"
+actionbar-not-enough: "<red>Not enough money! Need <white>{total}</white> <gray>| You have <white>{balance}"
+actionbar-inventory-full: "<red>Your inventory is full!"
+actionbar-purchase-failed: "<red>Purchase failed"
+actionbar-no-economy: "<red>Shop unavailable: no economy plugin"
+error-generic: "<red>Something went wrong. Tell an admin (see console). If money was taken it is refunded automatically."
+purchase-refunded: "<red>Could not deliver the item - your money was refunded."

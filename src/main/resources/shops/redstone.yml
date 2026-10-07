@@ -1,0 +1,47 @@
+title: "<red><bold>Redstone"
+columns: 4
+button-width: 150
+search: true
+aliases: [rs]
+items:
+  redstone_dust:     { material: REDSTONE,           name: "Redstone Dust",     price: 50,  rarity: COMMON }
+  redstone_block:    { material: REDSTONE_BLOCK,     price: 450,  rarity: UNCOMMON }
+  redstone_torch:    { material: REDSTONE_TORCH,     price: 60,  rarity: COMMON }
+  repeater:          { material: REPEATER,           name: "Redstone Repeater", price: 150, rarity: COMMON }
+  comparator:        { material: COMPARATOR,         price: 300,  rarity: UNCOMMON }
+  piston:            { material: PISTON,             price: 200,  rarity: COMMON }
+  sticky_piston:     { material: STICKY_PISTON,      price: 350,  rarity: UNCOMMON }
+  observer:          { material: OBSERVER,           price: 250,  rarity: UNCOMMON }
+  hopper:            { material: HOPPER,             price: 500, rarity: UNCOMMON }
+  dispenser:         { material: DISPENSER,          price: 300,  rarity: COMMON }
+  dropper:           { material: DROPPER,            price: 250,  rarity: COMMON }
+  lectern:           { material: LECTERN,            price: 175,  rarity: COMMON }
+  target:            { material: TARGET,             name: "Target Block",      price: 225, rarity: UNCOMMON }
+  lever:             { material: LEVER,              price: 25,   rarity: COMMON }
+  tripwire_hook:     { material: TRIPWIRE_HOOK,      name: "Trip Wire",         price: 75, rarity: COMMON }
+  chest:             { material: CHEST,              price: 50,  rarity: COMMON }
+  trapped_chest:     { material: TRAPPED_CHEST,      price: 125,  rarity: COMMON }
+  tnt:               { material: TNT,                price: 400,  rarity: UNCOMMON }
+  redstone_lamp:     { material: REDSTONE_LAMP,      price: 200,  rarity: COMMON }
+  stone_button:      { material: STONE_BUTTON,       price: 15,   rarity: COMMON }
+  oak_button:        { material: OAK_BUTTON,         name: "Oak Plank Button",  price: 15, rarity: COMMON }
+  string:            { material: STRING,             price: 30,   rarity: COMMON }
+  daylight_detector: { material: DAYLIGHT_DETECTOR,  name: "Daylight Sensor",   price: 350, rarity: UNCOMMON }
+  lightning_rod:     { material: LIGHTNING_ROD,      name: "Lighting Rod",      price: 225, rarity: UNCOMMON }
+  stone_plate:       { material: STONE_PRESSURE_PLATE, price: 40, rarity: COMMON }
+  oak_plate:         { material: OAK_PRESSURE_PLATE, price: 30,   rarity: COMMON }
+  slime_block:       { material: SLIME_BLOCK,        price: 500, rarity: UNCOMMON }
+  honey_block:       { material: HONEY_BLOCK,        name: "Honey",             price: 450, rarity: UNCOMMON }
+  crafter:           { material: CRAFTER,            price: 750, rarity: RARE }
+  iron_bars:         { material: IRON_BARS,          name: "Iron Bar",          price: 30, rarity: COMMON }
+  barrel:            { material: BARREL,             price: 60,  rarity: COMMON }
+  sculk_sensor:      { material: SCULK_SENSOR,       price: 1250, rarity: RARE }
+  white_wool:        { material: WHITE_WOOL,         price: 30,   rarity: COMMON }
+  minecart:          { material: MINECART,           price: 125,  rarity: COMMON }
+  chest_minecart:    { material: CHEST_MINECART,     name: "Minecart with Chest",  price: 200, rarity: COMMON }
+  hopper_minecart:   { material: HOPPER_MINECART,    name: "Minecart with Hopper", price: 600, rarity: UNCOMMON }
+  rail:              { material: RAIL,               price: 20,   rarity: COMMON }
+  powered_rail:      { material: POWERED_RAIL,       price: 150,  rarity: UNCOMMON }
+  cobweb:            { material: COBWEB,             price: 200,  rarity: UNCOMMON }
+  item_frame:        { material: ITEM_FRAME,         name: "Item Frame",        price: 75, rarity: COMMON }
+  armor_stand:       { material: ARMOR_STAND,        name: "Armour Stand",      price: 150, rarity: COMMON }

@@ -1,0 +1,26 @@
+name: VShop
+version: 1.0.0
+main: me.vshop.VShopPlugin
+api-version: '1.21'
+description: Dialog based shop with enchant books, armour chest and Discord logging
+depend: [Vault]
+commands:
+  vshop:
+    description: Open the shop
+    usage: /vshop [blocks|armour|books|ore|farm|redstone|search|reload|editarmour]
+  shop:
+    description: Open the shop
+    usage: /shop [blocks|armour|books|ore|farm|redstone|search|reload]
+  editarmour:
+    description: Edit the armour shop in-game (also reachable as /vshop:editarmour)
+    usage: /editarmour
+permissions:
+  vshop.use:
+    description: Use the shop
+    default: true
+  vshop.reload:
+    description: Reload the shop
+    default: op
+  vshop.editarmour:
+    description: Edit the armour shop
+    default: op

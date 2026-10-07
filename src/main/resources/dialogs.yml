@@ -1,0 +1,98 @@
+# ======================= VShop dialogs (all MiniMessage) =======================
+# Placeholders: {name} {price} {amount} {total} {rarity} {rarity_color} {category} {material} {query} {step}
+
+common:
+  button-width: 150
+  close-label: "<red>Close"
+  back-label: "<yellow>« Back"
+  search-label: "<aqua>Search"
+  search-input-label: "Search"
+  search-input-width: 250
+  search-max-length: 32
+  show-back-button: true
+  max-results: 100                      # max item buttons per dialog
+  entry-label: "{rarity_color}{name} <dark_gray>| <green>{price}"
+  results-suffix: " <gray>- {query}"
+  no-results: "<red>Nothing found for <white>{query}"
+
+# Main menu. Button types: category (id), armour, books, sell, search, command (command)
+# Reorder, rename or remove freely. columns controls the grid.
+main:
+  title: "<gold><bold>Shop"
+  columns: 2
+  button-width: 150
+  close-label: "<red>Close"
+  # Search bar at the top. With no Search button: type a name, then click Blocks / Armour / Books /
+  # Ore / Farm / Redstone and it opens a SEARCH across EVERY obtainable item in the game.
+  # (Leave the bar empty and those buttons open their normal menu.)
+  # Want a dedicated button? add: - { type: search, label: "<aqua>Search" }
+  search-bar: true
+  search-on-any-button: true
+  body: []
+  buttons:
+    - { type: category, id: blocks,   label: "<green>Blocks" }
+    - { type: armour,                 label: "<aqua>Armour" }
+    - { type: books,                  label: "<light_purple>Books" }
+    - { type: category, id: ores,     label: "<yellow>Ore" }
+    - { type: category, id: farm,     label: "<dark_green>Farm" }
+    - { type: category, id: redstone, label: "<red>Redstone" }
+    - { type: sell,                   label: "<gold>Sell" }
+
+category:
+  body: []
+  close-label: "<red>Close"
+
+search:
+  title: "<aqua>Search: <white>{query}"
+  columns: 3
+  body: []
+  close-label: "<red>Close"
+
+books:
+  title: "<light_purple><bold>Books"
+  body:
+    - "<gray>Select A book to purchase"
+  columns: 2
+  button-width: 150
+  show-back-button: true
+  close-label: "<red>Close"
+  category-title: "<light_purple>{name}"
+  category-body: []
+  entry-columns: 2
+  entry-width: 170
+  group-label: "{name} <gray>»"
+
+amount:
+  title: "<gold>Amount"
+  body:
+    - "{rarity_color}{name}"
+    - "<gray>Price: <green>{price}"
+    - "<gray>Amount: <yellow>{amount}"
+    - "<gray>Total: <green>{total}"
+  steps: [1, 5, 16, 32, 64]             # columns = number of steps
+  button-width: 60
+  negative-format: "<red>-{step}"
+  positive-format: "<green>+{step}"
+  ok-label: "<green>Okay"
+  cancel-label: "<red>Cancel"
+
+confirm:
+  title: "<gold>Confirm"
+  body:
+    - "{rarity_color}{name}"
+    - "<gray>Price: <green>{price}"
+    - "<gray>Amount: <yellow>{amount}"
+    - "<gray>Total: <green>{total}"
+  button-width: 120
+  confirm-label: "<green>Confirm"
+  cancel-label: "<red>Cancel"
+
+price-editor:                           # admin dialog for /vshop editarmour
+  title: "<gold>Set price"
+  body:
+    - "{rarity_color}{name}"
+    - "<gray>Current price: <green>{price}"
+  input-label: "New price"
+  button-width: 120
+  save-label: "<green>Save"
+  cancel-label: "<red>Cancel"

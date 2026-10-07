@@ -1,0 +1,148 @@
+# ============================ VShop main config ============================
+# Menus/text live in dialogs.yml + messages.yml. Items & prices live in shops/*.yml
+
+debug: false                       # true = log every purchase attempt (player, total, balance, economy) to console
+
+server-name: "My Server"          # used as {server} in Discord messages
+
+currency:
+  symbol: "$"
+  suffix: ""
+  format: "#,##0.##"              # Java DecimalFormat pattern
+
+notifications:
+  actionbar: true                 # message above the hotbar (texts: messages.yml -> actionbar-*)
+  chat: true                      # chat message too (set false for action bar only)
+
+max-amount: 2304                  # max items per purchase in the Amount dialog (36 stacks)
+full-inventory: DROP              # DROP = overflow is dropped at the player's feet, DENY = refuse purchase
+reopen-after-purchase: false      # go back to the shop list after buying
+sell-command: "sell"              # command run by the [Sell] button
+log-to-file: true                 # plugins/VShop/purchases.log
+
+# Rarity -> MiniMessage colour used by {rarity_color} in button labels.
+# You can add your own (e.g. MYTHIC) and use it as `rarity: MYTHIC` on any item.
+rarities:
+  COMMON: "<white>"
+  UNCOMMON: "<green>"
+  RARE: "<aqua>"
+  EPIC: "<light_purple>"
+  LEGENDARY: "<gold>"
+
+sounds:
+  purchase: { sound: "entity.player.levelup", volume: 1.0, pitch: 1.2 }
+  error:    { sound: "entity.villager.no",    volume: 1.0, pitch: 1.0 }   # leave sound: "" to disable
+
+# ------------------------- Discord purchase feed -------------------------
+# Discord server -> Channel settings -> Integrations -> Webhooks -> copy URL.
+# Placeholders: {player} {uuid} {item} {amount} {price} {total} {category} {rarity} {material} {server}
+discord:
+  enabled: false
+  webhook-url: ""
+  username: "VShop"
+  avatar-url: ""
+  content: ""                     # plain text above the embed (e.g. "<@&ROLE_ID>" to ping a role)
+  min-total: 0                    # only announce purchases worth at least this much
+  embed:
+    enabled: true
+    title: "🛒 New purchase"
+    description: "**{player}** bought **{amount}x {item}**"
+    color: "#57F287"
+    timestamp: true
+    thumbnail: "https://mc-heads.net/avatar/{uuid}/100"
+    footer: "{server}"
+    fields:
+      - { name: "Item",     value: "{item}",     inline: true }
+      - { name: "Amount",   value: "{amount}",   inline: true }
+      - { name: "Category", value: "{category}", inline: true }
+      - { name: "Unit price", value: "{price}",  inline: true }
+      - { name: "Total",    value: "{total}",    inline: true }
+
+# ------------------- Everything obtainable can be bought via search -------------------
+# Items NOT listed in shops/*.yml are hidden from the lists, but appear when a player searches:
+#   * main menu bar / /shop search  -> ALL obtainable items
+#   * inside the Blocks section     -> obtainable BLOCKS only
+# Price order: price-overrides > price-rules (first match wins) > default-price.
+searchable-items:
+  enabled: true
+  default-price: 50
+  default-rarity: COMMON
+  # Unobtainable in survival (exact material names)
+  excluded:
+    - BEDROCK
+    - BARRIER
+    - LIGHT
+    - STRUCTURE_BLOCK
+    - STRUCTURE_VOID
+    - JIGSAW
+    - SPAWNER
+    - BUDDING_AMETHYST
+    - REINFORCED_DEEPSLATE
+    - END_PORTAL_FRAME
+    - PETRIFIED_OAK_SLAB
+    - FARMLAND
+    - CHORUS_PLANT
+    - DEBUG_STICK
+    - KNOWLEDGE_BOOK
+    - FILLED_MAP
+    - WRITTEN_BOOK
+    - ENCHANTED_BOOK
+    - POTION
+    - SPLASH_POTION
+    - LINGERING_POTION
+    - TIPPED_ARROW
+    - SUSPICIOUS_SAND
+    - SUSPICIOUS_GRAVEL
+    - COMMAND_BLOCK_MINECART
+  # Any material whose name CONTAINS one of these is hidden
+  excluded-patterns: [ "INFESTED_", "COMMAND_BLOCK", "SPAWNER", "TEST_BLOCK", "TEST_INSTANCE", "SPAWN_EGG", "VAULT" ]
+  price-overrides:
+    BOOKSHELF: 150
+  price-rules:            # first match wins; "contains" is matched against the material name
+    - { contains: "NETHERITE_BLOCK",  price: 500000, rarity: LEGENDARY }
+    - { contains: "NETHERITE_INGOT",  price: 60000,  rarity: LEGENDARY }
+    - { contains: "NETHERITE_SCRAP",  price: 15000,  rarity: LEGENDARY }
+    - { contains: "NETHERITE_",       price: 90000,  rarity: LEGENDARY }
+    - { contains: "DRAGON_EGG",       price: 250000, rarity: LEGENDARY }
+    - { contains: "NETHER_STAR",      price: 100000, rarity: LEGENDARY }
+    - { contains: "BEACON",           price: 150000, rarity: LEGENDARY }
+    - { contains: "ELYTRA",           price: 80000,  rarity: LEGENDARY }
+    - { contains: "ENCHANTED_GOLDEN_APPLE", price: 40000, rarity: LEGENDARY }
+    - { contains: "TOTEM_OF_UNDYING", price: 30000,  rarity: EPIC }
+    - { contains: "TRIDENT",          price: 30000,  rarity: EPIC }
+    - { contains: "MACE",             price: 80000,  rarity: EPIC }
+    - { contains: "HEAVY_CORE",       price: 20000,  rarity: EPIC }
+    - { contains: "CONDUIT",          price: 15000,  rarity: EPIC }
+    - { contains: "WITHER_SKELETON_SKULL", price: 20000, rarity: EPIC }
+    - { contains: "DIAMOND_BLOCK",    price: 22500,  rarity: RARE }
+    - { contains: "DIAMOND_",         price: 7500,   rarity: RARE }
+    - { contains: "EMERALD_BLOCK",    price: 11250,  rarity: RARE }
+    - { contains: "GOLD_BLOCK",       price: 2700,   rarity: UNCOMMON }
+    - { contains: "IRON_BLOCK",       price: 1350,   rarity: UNCOMMON }
+    - { contains: "SHULKER_SHELL",    price: 1500,   rarity: RARE }
+    - { contains: "SHULKER_BOX",      price: 2500,   rarity: EPIC }
+    - { contains: "ENCHANTING_TABLE", price: 4000,   rarity: RARE }
+    - { contains: "RESPAWN_ANCHOR",   price: 3500,   rarity: RARE }
+    - { contains: "LODESTONE",        price: 3000,   rarity: RARE }
+    - { contains: "SCULK_",           price: 1500,   rarity: RARE }
+    - { contains: "MUSIC_DISC_",      price: 5000,   rarity: RARE }
+    - { contains: "DISC_FRAGMENT",    price: 2000,   rarity: RARE }
+    - { contains: "_SMITHING_TEMPLATE", price: 5000, rarity: RARE }
+    - { contains: "GHAST_TEAR",       price: 1500,   rarity: UNCOMMON }
+    - { contains: "ENDER_EYE",        price: 800,    rarity: UNCOMMON }
+    - { contains: "ENDER_PEARL",      price: 500,    rarity: UNCOMMON }
+    - { contains: "BLAZE_ROD",        price: 500,    rarity: UNCOMMON }
+    - { contains: "GOLDEN_",          price: 1200,   rarity: UNCOMMON }
+    - { contains: "CHAINMAIL_",       price: 1000,   rarity: UNCOMMON }
+    - { contains: "IRON_",            price: 750,    rarity: UNCOMMON }
+    - { contains: "ANVIL",            price: 750,    rarity: UNCOMMON }
+    - { contains: "LEATHER_",         price: 100 }
+    - { contains: "WOODEN_",          price: 25 }
+    - { contains: "_WOOL",            price: 30 }
+    - { contains: "_CONCRETE",        price: 25 }
+    - { contains: "_TERRACOTTA",      price: 30 }
+    - { contains: "_STAINED_GLASS",   price: 25 }
+    - { contains: "_PLANKS",          price: 5 }
+    - { contains: "_LOG",             price: 20 }
+    - { contains: "_LEAVES",          price: 10 }
+    - { contains: "_SAPLING",         price: 25 }

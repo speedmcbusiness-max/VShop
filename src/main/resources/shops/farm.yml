@@ -1,0 +1,12 @@
+title: "<dark_green><bold>Farm"
+columns: 2
+button-width: 150
+search: false
+aliases: [farming]
+items:
+  cactus:       { material: CACTUS,       price: 20,  rarity: COMMON }
+  kelp:         { material: KELP,         price: 10,  rarity: COMMON }
+  bamboo:       { material: BAMBOO,       price: 10,  rarity: COMMON }
+  sea_pickle:   { material: SEA_PICKLE,   price: 75, rarity: UNCOMMON }
+  sugar_cane:   { material: SUGAR_CANE,   price: 15,  rarity: COMMON }
+  sweet_berries: { material: SWEET_BERRIES, name: "Sweet Berries", price: 15, rarity: COMMON }

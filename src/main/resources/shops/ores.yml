@@ -1,0 +1,17 @@
+title: "<yellow><bold>Ores"
+columns: 3
+button-width: 150
+search: false
+aliases: [ore]
+items:
+  diamond:          { material: DIAMOND,          name: "Diamond",          price: 2500,  rarity: RARE }
+  redstone:         { material: REDSTONE,         name: "Redstone",         price: 50,   rarity: COMMON }
+  iron:             { material: IRON_INGOT,       name: "Iron",             price: 150,   rarity: COMMON }
+  gold:             { material: GOLD_INGOT,       name: "Gold",             price: 300,   rarity: UNCOMMON }
+  copper:           { material: COPPER_INGOT,     name: "Copper",           price: 60,   rarity: COMMON }
+  lapis_lazuli:     { material: LAPIS_LAZULI,     name: "Lapis Lazuli",     price: 75,   rarity: COMMON }
+  coal:             { material: COAL,             name: "Coal",             price: 40,    rarity: COMMON }
+  emerald:          { material: EMERALD,          name: "Emerald",          price: 1250,  rarity: RARE }
+  ancient_debris:   { material: ANCIENT_DEBRIS,   name: "Ancient Debris",   price: 12500, rarity: LEGENDARY }
+  nether_quartz:    { material: QUARTZ,           name: "Nether Quartz",    price: 100,   rarity: UNCOMMON }
+  nether_gold:      { material: NETHER_GOLD_ORE,  name: "Nether Gold",      price: 175,   rarity: UNCOMMON }
